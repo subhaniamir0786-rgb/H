@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amir Birthday Invite 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:'Playfair Display', serif;
+text-align:center;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+padding:10px;
+border:6px double rgba(255,255,255,0.5);
+border-radius:15px;
+}
+
+.cake{
+font-size:60px;
+}
+
+.invite{
+font-size:32px;
+margin-top:5px;
+white-space:nowrap;
+}
+
+.card{
+margin-top:10px;
+padding:20px 25px;
+border-radius:18px;
+font-size:18px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.3);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+max-width:420px;
+width:100%;
+}
+
+.heading{
+font-size:26px;
+letter-spacing:1px;
+margin-bottom:15px;
+padding-bottom:6px;
+border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.info{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+margin:6px 0;
+font-size:18px;
+}
+
+.icon{
+font-size:20px;
+}
+
+.mapbtn{
+margin-top:12px;
+padding:8px 18px;
+font-size:15px;
+border:none;
+border-radius:18px;
+background:#4facfe;
+color:white;
+cursor:pointer;
+}
+
+.personal{
+margin-top:15px;
+font-size:16px;
+line-height:1.5;
+padding:10px 14px;
+border-radius:10px;
+background:rgba(255,255,255,0.18);
+border-left:4px solid #ffd700;
+font-style:italic;
+}
+
+.question{
+margin-top:18px;
+font-size:18px;
+}
+
+.choice button{
+margin:8px;
+padding:8px 18px;
+border:none;
+border-radius:18px;
+font-size:16px;
+cursor:pointer;
+}
+
+.yes{
+background:#2ecc71;
+color:white;
+}
+
+.no{
+background:#e74c3c;
+color:white;
+}
+
+.confetti{
+position:absolute;
+width:8px;
+height:8px;
+top:-10px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+to{transform:translateY(100vh);}
+}
+
+@media (max-width:480px){
+
+.cake{
+font-size:50px;
+}
+
+.invite{
+font-size:26px;
+}
+
+.heading{
+font-size:22px;
+}
+
+.info{
+font-size:16px;
+}
+
+.question{
+font-size:16px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="cake">🎂</div>
+
+<div class="invite">Birthday Invitation</div>
+
+<div class="card">
+
+<div class="heading">
+✨ A Special Evening with Amir
+</div>
+
+<div class="info">
+<span class="icon">📅</span>
+<span>10 March</span>
+</div>
+
+<div class="info">
+<span class="icon">⏰</span>
+<span>6:00 PM</span>
+</div>
+
+<div class="info">
+<span class="icon">📍</span>
+<span>MOOD LIGHT CAFE</span>
+</div>
+
+<a href="https://maps.app.goo.gl/zPYE8kCvX5BKq8eq8" target="_blank">
+<button class="mapbtn">Open Location 📍</button>
+</a>
+
+<div class="personal">
+Dear Roshani, it would truly mean a lot if you join my celebration. Your presence will make this evening even more special. 🎉
+</div>
+
+<div class="question">
+So… will you be there? 🎂
+</div>
+
+<div class="choice">
+<button class="yes" onclick="yes()">YES ✅</button>
+<button class="no" onclick="no()">NO ❌</button>
+</div>
+
+</div>
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_c8c8a73467.mp3">
+</audio>
+
+<script>
+
+function yes(){
+alert("Great Roshani! I’m really glad you’re coming. See you at the party! 🎉");
+}
+
+function no(){
+alert("😄 Nice try Roshani… but that button doesn’t really work. You’re coming anyway! 🎉");
+}
+
+function confetti(){
+let c=document.createElement("div")
+c.className="confetti"
+c.style.left=Math.random()*100+"vw"
+c.style.background="hsl("+Math.random()*360+"deg,100%,50%)"
+document.body.appendChild(c)
+
+setTimeout(()=>{c.remove()},5000)
+}
+
+setInterval(confetti,200)
+
+</script>
+
+</body>
+</html>
